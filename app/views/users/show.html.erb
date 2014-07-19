@@ -8,3 +8,40 @@
 
 <h2>Location</h2>
 <h4> <%=@current_user.location%> </h4>
+
+
+    <!--ALL class code - Shana -->
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header class ="bar bar-nav">
+      <div id = "nav-bar" class ="title">
+        <div id = "app-name"> IMPARTIAL </div>
+      </div>
+      <button id = "profile-button"> <span id = "icon-profile" class="icon icon-person"></span> </button>
+      <button id="stats-button"><span class="glyphicon glyphicon-stats"></span></button>
+    </header>
+
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content">
+
+        
+      <div class = "textfill">
+        "If you're walking down the right path and you're willing to keep walking."
+      </div>
+
+    <div id="div-buttons">
+      <button id = "agree-button" class="btn btn-primary ">&#x2713;</button>
+      <div id = "padding-btw-AD"></div>
+      <button id = "disagree-button" class="btn btn-primary ">X</button>
+    </div>
+
+      <div id = "progress-div" class="progress progress-warning active">
+        <div id "short-bar" class="progress-bar" 
+          role="progressbar"
+          aria-valuenow="60"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          style="width: 60%;background-color:rgb(206, 60, 63)">
+        </div>
+      </div>
+    

@@ -49,9 +49,6 @@ ActiveRecord::Schema.define(version: 20140719160806) do
     t.string   "name"
     t.string   "oauth_token"
     t.string   "email"
-    t.integer  "age"
-    t.string   "location"
-    t.string   "party"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
