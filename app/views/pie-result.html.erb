@@ -1,1 +1,48 @@
 <h1>pie-result.html.erb</h1>
+
+
+    <!--ALL class code - Shana -->
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header class ="bar bar-nav">
+      <div id = "nav-bar" class ="title">
+        <div id = "app-name"> IMPARTIAL </div>
+      </div>
+      <button id = "profile-button"> <span id = "icon-profile" class="icon icon-person"></span> </button>
+      <button id="stats-button"><span class="glyphicon glyphicon-stats"></span></button>
+    </header>
+
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content" style="text-align:center;">
+    <h1 id="selected party" >QUIZ RESULTS</h1>
+    <h3 id="party-label"><u>PARTY<u></h3>
+    <h2 id="party-result">REPUBLICAN</h2>
+       <div id="graph"></div>
+       <button id = "rep-button" style="margin-bottom:20px;width:210px;display:inline-block;" class="btn btn-primary">SEE FULL RESULTS</button>
+       <div style="margin-bottom:20px;">
+               <img src="http://www.publicworkspartners.com/wp-content/uploads/2014/05/facebook-icon.png" style="width:30px;height:30px;margin-right:20px;"/>
+
+              <img src="http://cleansocialicons.com/wp-content/uploads/2012/10/transparent-google+-logo-icon.png" style="width:30px;height:30px;"/>
+          </div>
+    <script type="text/javascript">
+ 
+    var w = 300,                        //width
+    h = 300,                            //height
+    r = 100,                            //radius
+    color = d3.scale.category20c();     //builtin range of colors
+    //var demVal = Math.floor((Math.random() * 100) + 1);
+    data = [{"label":"DEM", "value":75}, 
+            {"label":"REP", "value":25}];
+
+ var vis = d3.select("#graph")
+        .append("svg:svg")              //create the SVG element inside the <body>
+        .data([data])                   //associate our data with the document
+            .attr("width", w)           //set the width and height of our visualization (these will be attributes of the <svg> tag
+            .attr("height", h)
+        .append("svg:g")
+            .attr("id", "grp")                //make a group to hold our pie chart
+            .attr("transform", "translate(" + r + "," + r + ")");    //move the center of the pie chart from 0, 0 to radius, radius
+ 
+    var arc = d3.svg.arc()              //this will create <path> elements for us using arc data
+        .outerRadius(r);
+ 

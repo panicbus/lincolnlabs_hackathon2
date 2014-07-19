@@ -1,6 +1,6 @@
 $(document).ready(function(){    
 
-	$('#question_2').removeClass('hidden');
+	var main_box = $('#main_box');
 	
 	var div = 0
 	$('#agree-button').click(function(){
