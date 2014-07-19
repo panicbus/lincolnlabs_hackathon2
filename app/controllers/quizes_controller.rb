@@ -17,9 +17,12 @@ class QuizesController < ApplicationController
       QuestionTest.create(question_id: question.id, quiz_id: @quiz.id)
     end
 
+    redirect_to quize_path(@quiz.id)
+
   end
 
   def show
+    @quiz = Quiz.find(params['id'])
   end
 
   # private
