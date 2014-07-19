@@ -2,10 +2,12 @@ Impartial::Application.routes.draw do
 
   # resources :user
 
-  root to: 'quizes#index'
+  # root to: 'quizes#index'
+  root to: 'quizes#splash'
 
   resources :quizes
   resources :question_test
+
 
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]

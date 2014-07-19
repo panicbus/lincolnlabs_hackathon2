@@ -42,6 +42,29 @@ $(function(){
     });
 
 
-
-
 }
+
+	// pie results javascript
+	
+  var w = 300,                        //width
+    h = 300,                            //height
+    r = 100,                            //radius
+    color = d3.scale.category20c();     //builtin range of colors
+    //var demVal = Math.floor((Math.random() * 100) + 1);
+    data = [{"label":"DEM", "value":75}, 
+            {"label":"REP", "value":25}];
+
+ var vis = d3.select("#graph")
+        .append("svg:svg")              //create the SVG element inside the <body>
+        .data([data])                   //associate our data with the document
+            .attr("width", w)           //set the width and height of our visualization (these will be attributes of the <svg> tag
+            .attr("height", h)
+        .append("svg:g")
+            .attr("id", "grp")                //make a group to hold our pie chart
+            .attr("transform", "translate(" + r + "," + r + ")");    //move the center of the pie chart from 0, 0 to radius, radius
+ 
+    var arc = d3.svg.arc()              //this will create <path> elements for us using arc data
+        .outerRadius(r);
+ 
+
+

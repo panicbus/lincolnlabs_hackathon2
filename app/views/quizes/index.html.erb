@@ -1,6 +1,86 @@
-<h1>Quizes</h1>
+    <!--ALL class code - Shana -->
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header class ="bar bar-nav">
+      <div id = "nav-bar" class ="title">
+        <div id = "app-name"> IMPARTIAL </div>
+      </div>
+      <button id = "profile-button"> <span id = "icon-profile" class="icon icon-person"></span> </button>
+      <button id="stats-button"><span class="glyphicon glyphicon-th"></span></button>
+    </header>
 
-<form action="/quizes/" method ="post" name="quiz">
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+    <div class="content">
+      <div id = "quizzes-title" >QUIZZES</div>
+      <div id = "select-label" >SELECT YOUR QUIZ</div>
+      <div id = "table-div"> 
+        <table style="width:300px">
+
+          <tr>
+            <td>
+            	<form action="/quizes/" method ="post" name="quiz">
+            		<input type="hidden" name="category" value="Issue_1">
+            		<button id="sets-button-small" type="submit" class="btn btn-primary">ABORTION</button>
+            	</form>
+            </td>
+            <td>
+            	<form action="/quizes/" method ="post" name="quiz">
+            		<input type="hidden" name="category" value="Issue_2">
+	            	<button id="sets-button-small" type="submit" class="btn btn-primary">BUDGET &amp;<br> ECONOMY</button>
+	            </form>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+            	<form action="/quizes/" method ="post" name="quiz">
+            		<input type="hidden" name="category" value="Issue_3">
+	            	<button id="sets-button-small" type="submit" class="btn btn-primary">ENVIRONMENT</button>
+	            </form>
+            </td>
+            <td>
+            	<form action="/quizes/" method ="post" name="quiz">
+            		<input type="hidden" name="category" value="Issue_4">
+	            	<button id="sets-button-small" type="submit" class="btn btn-primary">FOREIGN<br>POLICY</button>
+	            </form>
+            </td> 
+          </tr>
+
+          <tr>
+            <td>
+            	<form action="/quizes/" method ="post" name="quiz">
+              	<input type="hidden" name="category" value="Issue_5">
+	            	<button id="sets-button-small" type="submit" class="btn btn-primary">HEALTH<br>CARE</button>
+	            </form>
+            </td>
+            <td>
+            	<form action="/quizes/" method ="post" name="quiz">
+            		<input type="hidden" name="category" value="Issue_6">
+	            	<button id="sets-button-small" type="submit" class="btn btn-primary">IMMIGRATION</button>
+	            </form>
+            </td>
+          </tr>
+
+           <tr>
+            <td>
+            	<form action="/quizes/" method ="post" name="quiz">
+            		<input type="hidden" name="category" value="Issue_1">
+	            	<button id="sets-button-small" type="submit" class="btn btn-primary">JOBS</button>
+            	</form>
+            </td>
+            <td>
+            	<form action="/quizes/" method ="post" name="quiz">
+            		<input type="hidden" name="category" value="Issue_1">
+            		<button id="sets-button-small" type="submit" class="btn btn-primary">SOCIAL<br>SECURITY</button>
+            	</form>
+            </td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+
+<!-- <form action="/quizes/" method ="post" name="quiz">
   <input type="hidden" name="category" value="Issue_1">
   <button id="submit1"type="submit"> Issue 1 </button>
 </form>
@@ -16,3 +96,4 @@
 </form>
 
 
+ -->

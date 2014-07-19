@@ -1,22 +1,22 @@
-$(document).ready(function(){    
+// $(document).ready(function(){    
 
-	var main_box = $('#main_box');
+// 	var main_box = $('#main_box');
 	
-	var div = 0
-	$('#agree-button').click(function(){
-		var parent = $(this).parent().siblings(); 
-		$(parent[div]).addClass('hidden');
-		$(parent[div+1]).removeClass('hidden');
-		div+=1
-	})
+// 	var div = 0
+// 	$('#agree-button').click(function(){
+// 		var parent = $(this).parent().siblings(); 
+// 		$(parent[div]).addClass('hidden');
+// 		$(parent[div+1]).removeClass('hidden');
+// 		div+=1
+// 	})
 	
-	var div = 0
-	$('#disagree-button').click(function(){
-		var parent = $(this).parent().siblings(); 
-		$(parent[div]).addClass('hidden');
-		$(parent[div+1]).removeClass('hidden');
-		div+=1
-	})
+// 	var div = 0
+// 	$('#disagree-button').click(function(){
+// 		var parent = $(this).parent().siblings(); 
+// 		$(parent[div]).addClass('hidden');
+// 		$(parent[div+1]).removeClass('hidden');
+// 		div+=1
+// 	})
 
 
 

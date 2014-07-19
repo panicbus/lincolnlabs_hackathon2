@@ -1,1 +1,31 @@
-<h1>profile-view.html.erb</h1>
+    <!--ALL class code - Shana -->
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header class ="bar bar-nav">
+      <div id = "nav-bar" class ="title">
+        <div id = "app-name"> IMPARTIAL </div>
+      </div>
+      <button id = "profile-button"> <span id = "icon-profile" class="icon icon-person"></span> </button>
+      <button id="stats-button"><span class="glyphicon glyphicon-th"></span></button>
+    </header>
+
+
+    <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+<div class="content">
+   
+  <div id = "bday-dropdown">
+      <label style="padding-right:10px;"><strong>BIRTHDAY:</strong></label><input type="text" id="date" data-format="DD-MM-YYYY" data-template="D MMM YYYY" name="date" value="09-01-2013"></input>
+  </div>
+  <div id= "bday-dropdown" style="margin-top:70px;margin-right:20px;">
+      <form>
+      <input type="text" placeholder="Political Party">
+      <input type="text" placeholder="Location">
+      <button class="btn btn-positive btn-block" style="background-color:rgb(206, 60, 63);">Save</button>
+      </form>
+  </div>
+</div> 
+    <script>   
+      $(function(){
+          $('#date').combodate();    
+      });
+    </script>
+   
