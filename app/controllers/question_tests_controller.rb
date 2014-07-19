@@ -1,12 +1,18 @@
 class QuestionTestsController < ApplicationController
+  def index
 
+  end
 
+  def new
+  end
 
-  def create
+  def show
+  end
 
-
+  def update
     @answer = QuestionTest.find(params[:id])
-    @answer.update_attributes(candidate_answer:params[candidate_answer], party_answer:params[party_answer])
+
+    @answer.update_attributes(candidate_answer:params["answer"]["candidate_answer"], party_answer:params["answer"]["party_answer"])
 
     render json: @vote, status: 201
   end

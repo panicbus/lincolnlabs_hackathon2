@@ -14,15 +14,15 @@
 
 
       <% @quiz.questions.each_with_index do |question, index|  %>
+
         <% if index != 0 %>
           <div id="question_<%= question.id %>" class="textfill hidden">
             <%= question.quote%>
-          <form action="/quizes/" method ="post" >
+          <form action="/question_tests" method ="post" >
             <input type='hidden' name='_method' value='put'>
-            <input type="hidden" id="question_id" name="question_id" value="<%=question.id%>">
-            <button id="agree-button"  type="submit" class="btn btn-primary ">&#x2713;</button>
-              <div id="padding-btw-AD"></div>
-            <button id="disagree-button" class="btn btn-primary ">X</button>
+            <input type="hidden" id="question_id_<%=index%>" name="question_id" value="<%=question.id%>">
+            <input type="hidden" id="candidate_answer_<%=index%>" name="question_id" value="<%=question.candidate%>">
+            <input type="hidden" id="party_answer_<%=index%>" name="question_id" value="<%=question.party%>">
           </form>
 
           </div>

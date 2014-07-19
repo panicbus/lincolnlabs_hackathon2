@@ -17,16 +17,30 @@
 //= require_tree .
 
 
-$(function(){
+$(document).ready(function(){
 
-    $('body').on('click','#agree-button',function(event){
-      event.preventDefault();
-      alert("hi");
+  var main_box = $('#main_box');
 
-      var $candidate_answer = $('#candidate_answer').val();
-      var $party_answer = $('#party_answer').val();
-      var $question_id = $ ('#question_id').val();
+  var div = 0;
+  var x=0;
 
+  $('#agree-button').click(function(){
+    alert("hi");
+    // event.preventDefault();
+    var parent = $(this).parent().siblings();
+
+    $(parent[div]).addClass('hidden');
+    $(parent[div+1]).removeClass('hidden');
+    div += 1;
+
+
+
+
+    var $candidate_answer = $('#candidate_answer_'+x).val();
+    var $party_answer = $('#party_answer_'+x).val();
+    var $question_id = $ ('#question_id_'+x).val();
+
+    x+=1;
       var answer = {
         answer:
         {
@@ -35,22 +49,23 @@ $(function(){
           party_answer:$party_answer
         }
       };
-
-      // $.ajax({
-      //   type: "POST",
-      //   dataType: "script",
-      //   url: '/question_test/'+$question_id,
-      //   contentType: 'application/json',
-      //   data: answer}).done(function( msg )
-      //   {
-      //       alert( "Data Saved: " + msg );
-      //   });
-
-      $.post("/question_test", answer).done(function(data) {
-
-
+      $.post("/question_tests/"+$question_id, answer).done(function(data) {
+        //
       });
 
-    });
+
+  });
+
+
+
+  $('#disagree-button').click(function(){
+    var parent = $(this).parent().siblings();
+    $(parent[div]).addClass('hidden');
+    $(parent[div+1]).removeClass('hidden');
+    div+=1;
+  });
 
 });
+
+
+
