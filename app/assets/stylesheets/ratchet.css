@@ -1433,10 +1433,12 @@ select {
   content: '\e822';
 }
 
+
+
+/* ///// CUSTOM STYLING STARTS HERE ////// */
+
 #nav-bar {
   background-color: rgb(53, 118, 190);
- 
-
 }
 
 #app-name {
