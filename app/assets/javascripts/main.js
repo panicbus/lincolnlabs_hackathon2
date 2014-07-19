@@ -1,8 +1,22 @@
 $(document).ready(function(){    
 
 	$('#question_2').removeClass('hidden');
-
-	$('#agree-button').addClass('hidden');
+	
+	var div = 0
+	$('#agree-button').click(function(){
+		var parent = $(this).parent().siblings(); 
+		$(parent[div]).addClass('hidden');
+		$(parent[div+1]).removeClass('hidden');
+		div+=1
+	})
+	
+	var div = 0
+	$('#disagree-button').click(function(){
+		var parent = $(this).parent().siblings(); 
+		$(parent[div]).addClass('hidden');
+		$(parent[div+1]).removeClass('hidden');
+		div+=1
+	})
 
 
 
