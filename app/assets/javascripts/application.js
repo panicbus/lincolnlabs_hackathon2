@@ -19,8 +19,9 @@
 
 $(function(){
 
-    $('body').on('click','#agree_button',function(event){
-      even.preventDefault();
+    $('body').on('click','#agree-button',function(event){
+      event.preventDefault();
+      alert("hi");
 
       var $candidate_answer = $('#candidate_answer').val();
       var $party_answer = $('#party_answer').val();
@@ -29,19 +30,27 @@ $(function(){
       var answer = {
         answer:
         {
+          question_id: $question_id,
           candidate_answer: $candidate_answer,
-          party_answer:$party_answer,
+          party_answer:$party_answer
         }
       };
 
-      $.put("/question_test"+$question_id, answer).done(function(data) {
+      // $.ajax({
+      //   type: "POST",
+      //   dataType: "script",
+      //   url: '/question_test/'+$question_id,
+      //   contentType: 'application/json',
+      //   data: answer}).done(function( msg )
+      //   {
+      //       alert( "Data Saved: " + msg );
+      //   });
+
+      $.post("/question_test", answer).done(function(data) {
 
 
-      }
+      });
 
     });
 
-
-
-
-}
+});

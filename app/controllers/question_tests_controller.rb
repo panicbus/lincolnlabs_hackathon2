@@ -2,7 +2,9 @@ class QuestionTestsController < ApplicationController
 
 
 
-  def update
+  def create
+
+
     @answer = QuestionTest.find(params[:id])
     @answer.update_attributes(candidate_answer:params[candidate_answer], party_answer:params[party_answer])
 
