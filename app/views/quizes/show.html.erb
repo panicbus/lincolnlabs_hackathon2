@@ -11,15 +11,13 @@
 
     <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
     <div class="content">
-    <% @quiz.questions.each do |question| %>
+      <% @quiz.questions.each do |question| %>
 
-      <div class="big-quote">  
-        <div class="textfill">
+        <div id="question_<%= question.id %>" class="textfill hidden">
           <%= question.quote%>
         </div>
-      </div>
-
-    <%end%>
+      
+      <%end%>
 
     <div id="div-buttons">
       <button id="agree-button" class="btn btn-primary ">&#x2713;</button>
@@ -36,3 +34,4 @@
           style="width: 60%;background-color:rgb(206, 60, 63)">
         </div>
       </div>
+    </div>
