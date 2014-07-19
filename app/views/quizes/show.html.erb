@@ -10,13 +10,20 @@
 
 
     <!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
-    <div class="content">
-      <% @quiz.questions.each do |question| %>
-
-        <div id="question_<%= question.id %>" class="textfill hidden">
-          <%= question.quote%>
-        </div>
-      
+    <div id="main-box" class="content">
+    
+       
+      <% @quiz.questions.each_with_index do |question, index|  %>
+        <% if index != 0 %>
+          <div id="question_<%= question.id %>" class="textfill hidden">
+            <%= question.quote%>
+          </div>
+        <% else %> 
+          <div id="question_<%= question.id %>" class="textfill">
+            <%= question.quote%>
+          </div>
+        <% end %>
+       
       <%end%>
 
     <div id="div-buttons">

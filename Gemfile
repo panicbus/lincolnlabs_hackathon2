@@ -26,9 +26,11 @@ gem 'omniauth-twitter'
 gem 'koala'
 gem 'pry-rails'
 gem 'pry'
+gem 'pry-debugger'
 gem 'figaro'
 gem 'protected_attributes'
 gem 'ratchet-rails'
+
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
