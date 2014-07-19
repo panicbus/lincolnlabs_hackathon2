@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 
-  has_many :quizes
+  has_many :quizzes
   attr_accessible :provider, :uid, :name, :oauth_token, :email, :age, :location, :party
 
 def self.from_omniauth(auth)

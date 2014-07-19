@@ -55,7 +55,7 @@
 
     width: 190px;
     height: 190px;
-    
+
     position: absolute;
     top:30px;
     bottom: 0;
@@ -70,7 +70,7 @@
 }
 
 #party-label {
-  
+
   font-weight: bold;
   text-align: center;;
   background-color: none;
@@ -82,7 +82,7 @@
 }
 
 #quote-label {
-  
+
   font-weight: bold;
   text-align: center;;
   background-color: none;
@@ -104,8 +104,8 @@ span.glyphicon-th {
     bottom: 20px;
     left: 10px;
     margin: auto;
-    
-    
+
+
 }
 
 
@@ -171,14 +171,14 @@ span.glyphicon-th {
 #div-buttons{
   width: 300px;
   height: 190px;
-  
+
   position: absolute;
   top:400px;
   bottom: 0;
   left: 0;
   right: 0;
 
-  margin: auto;  
+  margin: auto;
 
 }
 
@@ -289,6 +289,7 @@ span.glyphicon-th {
 
 .hidden {
   display: none;
+  visibility: none;
 }
 
 

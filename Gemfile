@@ -26,7 +26,7 @@ gem 'omniauth-twitter'
 gem 'koala'
 gem 'pry-rails'
 gem 'pry'
-gem 'pry-debugger'
+
 gem 'figaro'
 gem 'protected_attributes'
 gem 'ratchet-rails'
