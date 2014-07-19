@@ -14,3 +14,33 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$(function(){
+
+    $('body').on('click','#agree_button',function(event){
+      even.preventDefault();
+
+      var $candidate_answer = $('#candidate_answer').val();
+      var $party_answer = $('#party_answer').val();
+      var $question_id = $ ('#question_id').val();
+
+      var answer = {
+        answer:
+        {
+          candidate_answer: $candidate_answer,
+          party_answer:$party_answer,
+        }
+      };
+
+      $.put("/question_test"+$question_id, answer).done(function(data) {
+
+
+      }
+
+    });
+
+
+
+
+}
