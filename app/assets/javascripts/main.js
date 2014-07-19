@@ -1,18 +1,17 @@
-$(document).ready(function(){    
+$(document).ready(function(){
 
 	$('#question_2').removeClass('hidden');
-	
 	var div = 0
+
 	$('#agree-button').click(function(){
-		var parent = $(this).parent().siblings(); 
+		var parent = $(this).parent().siblings();
 		$(parent[div]).addClass('hidden');
 		$(parent[div+1]).removeClass('hidden');
 		div+=1
 	})
-	
-	var div = 0
+
 	$('#disagree-button').click(function(){
-		var parent = $(this).parent().siblings(); 
+		var parent = $(this).parent().siblings();
 		$(parent[div]).addClass('hidden');
 		$(parent[div+1]).removeClass('hidden');
 		div+=1
@@ -26,7 +25,7 @@ $(document).ready(function(){
 
 
 
-//     (function($) { 
+//     (function($) {
 //       $.fn.textfill = function(options) {
 //         return this.each(function() {
 //           var text = $(this).html();
@@ -78,7 +77,7 @@ $(document).ready(function(){
 //                       maxFontSize && (maxFontSize < fontSize) ?
 //                       maxFontSize :
 //                       fontSize;
-                
+
 //           coef = minFontSize && (minFontSize > fontSize) ?
 //                       minFontSize / oldFontSize :
 //                       maxFontSize && (maxFontSize < fontSize) ?
@@ -88,11 +87,11 @@ $(document).ready(function(){
 //               $(this).css("font-size", (contentFontSizes[i] * coef) + 'px');
 //           });
 //           $(this).css('fontSize', newFontSize);
-//         }); 
-//       }; 
+//         });
+//       };
 //     })(jQuery);
 
-// $(".textfill").textfill({ minFontPixels: 20 }); 
+// $(".textfill").textfill({ minFontPixels: 20 });
 
 
 });
