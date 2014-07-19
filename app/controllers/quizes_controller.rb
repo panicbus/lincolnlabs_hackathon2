@@ -10,11 +10,11 @@ class QuizesController < ApplicationController
   end
 
   def create
-    @questions.find_by(category:params[:category])
+    @questions= Question.where(category:params[:category])
     @quiz = Quiz.create( user_id: current_user.id, category: params[:category] )
 
     @questions.each do |question|
-      Question_test.create(question_id: question.id, quiz_id: @quiz.id)
+      QuestionTest.create(question_id: question.id, quiz_id: @quiz.id)
     end
 
   end
