@@ -1,0 +1,91 @@
+    <!--ALL class code - Shana -->
+    <!-- Make sure all your bars are the first things in your <body> -->
+    <header class ="bar bar-nav">
+      <div id = "nav-bar" class ="title">
+        <div id = "app-name"> IMPARTIAL </div>
+      </div>
+      <button id = "profile-button"> <span id = "icon-profile" class="icon icon-person"></span> </button>
+      <button id="stats-button"><span class="glyphicon glyphicon-th"></span></button>
+    </header>
+
+    <div class="content" style="text-align:center;">
+    	<div id="title">
+    		<h3>FULL RESULT</h3>
+    	</div>
+    	<div id="contain" style="margin-top: 15px;">
+    		<div id="left" style="float:left;display:inline-block;margin-left:40px;">
+    			<p><u>PARTY</u></p>
+    			<h4 name="party">DEMOCRAT</h4>
+    			<p><u>CANDIDATE</u></p>
+    			<h4 name="candidate">JOE BIDEN</h4>
+    		</div>
+    		<div id="graph" style="float:right;display:inline-block"></div>
+    	</div>
+    	<div id="rr" style="clear:both">
+			<p><u>RESPONSES RECEIVED</u></p>
+		</div>
+		<div id="issues-done">
+			<p>HEALTHCARE       (10/60)</p>
+			<p>IMMIGRATION       (0/60)</p>
+			<p>TAX               (0/60)</p>
+			<p>EDUCATION         (0/60)</p>
+		</div>
+		<div id = "margin-left:"> 		        
+		            <button id = "sets-button-big" class="btn btn-primary " style="display:block;margin-left:95px;">QUOTE RESULTS</button>
+		            <button id = "sets-button-big" class="btn btn-primary "style="display:block;margin-left:86px;">REGISTER TO VOTE</button>
+		            <button id = "sets-button-big" class="btn btn-primary " style="display:block;margin-left:82px;">VOTER CHEATSHEET</button>
+		 </div>
+		
+
+
+    </div>
+        <script type="text/javascript">
+ 
+    var w = 140,                        //width
+    h = 140,                            //height
+    r = 60,                            //radius
+    color = d3.scale.category20c();     //builtin range of colors
+    //var demVal = Math.floor((Math.random() * 100) + 1);
+    data = [{"label":"DEM", "value":75}, 
+            {"label":"REP", "value":25}];
+
+ var vis = d3.select("#graph")
+        .append("svg:svg")              //create the SVG element inside the <body>
+        .data([data])                   //associate our data with the document
+            .attr("width", w)           //set the width and height of our visualization (these will be attributes of the <svg> tag
+            .attr("height", h)
+        .append("svg:g")
+            .attr("id", "grp")                //make a group to hold our pie chart
+            .attr("transform", "translate(" + r + "," + r + ")");    //move the center of the pie chart from 0, 0 to radius, radius
+ 
+    var arc = d3.svg.arc()              //this will create <path> elements for us using arc data
+        .outerRadius(r);
+ 
+    var pie = d3.layout.pie()           //this will create arc data for us given a list of values
+        .value(function(d) { return d.value;});    //we must tell it out to access the value of each element in our data array
+ 
+    var arcs = vis.selectAll("g.slice")     //this selects all <g> elements with class slice (there aren't any yet)
+        .data(pie)                          //associate the generated pie data (an array of arcs, each having startAngle, endAngle and value properties) 
+        .enter()                            //this will create <g> elements for every "extra" data element that should be associated with a selection. The result is creating a <g> for every object in the data array
+            .append("svg:g")                //create a group to hold each slice (we will have a <path> and a <text> element associated with each slice)
+                .attr("class", "slice");    //allow us to style things in the slices (like text)
+ 
+        arcs.append("svg:path")
+                .attr("fill", function(d, i) { return (data[i].label === 'DEM') ? "rgb(53, 118, 190)" : "rgb(206, 60, 63)"; } ) //set the color for each slice to be chosen from the color function defined above
+                .attr("d", arc);                                    //this creates the actual SVG path using the associated data (pie) with the arc drawing function
+ 
+        arcs.append("svg:text")                                     //add a label to each slice
+                .attr("transform", function(d) {                    //set the label's origin to the center of the arc
+                //we have to make sure to set these before calling arc.centroid
+                d.innerRadius = 0;
+                d.outerRadius = r;
+                return "translate(" + arc.centroid(d) + ")";        //this gives us a pair of coordinates like [50, 50]
+            })
+            .attr("text-anchor", "middle")
+            .style("font-size", 14 + "px")   
+            .attr("stroke", "#fff")                      //center the text on it's origin
+            .text(function(d, i) { return data[i].label + ' ' + d.value + '%'; });        //get the label from our original data array
+     
+      d3.select('#grp').attr("transform", "translate(60,60)");
+
+    </script>

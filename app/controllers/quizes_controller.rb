@@ -25,6 +25,10 @@ class QuizesController < ApplicationController
     @quiz = Quiz.find(params['id'])
   end
 
+  def splash
+    render :splash
+  end
+
   # private
   # def quiz_parameters
   #   params.require(:quizes).permit(:category)

@@ -276,7 +276,7 @@ span.glyphicon-th {
 
 #personal-info {
   width: 140px;
-  height: 200px;
+  height: 220px;
   position: absolute;
   top:120px;
   bottom: 0;
@@ -286,11 +286,38 @@ span.glyphicon-th {
 
 }
 
+.personal-txt {
+  padding-bottom: 13px;
+}
+
+#edit-button {
+  position: absolute;
+  top:190px;
+  bottom: 0;
+  right: 60px;
+  text-align: left;
+  color: rgb(206, 60, 63);
+  font-size: 10px;
+}
+
+.title-labels{
+  font-size: 10px;
+}
+
+
+.splash-image img {
+  width: 315px;
+  height: 565px;
+
+}
+
 
 .hidden {
   display: none;
   visibility: none;
 }
 
-
+button#rep-button {
+margin-top: 180px;
+}
 
