@@ -14,7 +14,6 @@
 
 
       <% @quiz.questions.each_with_index do |question, index|  %>
-
         <% if index != 0 %>
           <div id="question_<%= question.id %>" class="textfill hidden">
             <%= question.quote%>
@@ -30,16 +29,29 @@
         <% else %>
           <div id="question_<%= question.id %>" class="textfill">
             <%= question.quote%>
+
+          <form action="/question_tests" method ="post" >
+            <input type='hidden' name='_method' value='put'>
+            <input type="hidden" id="question_id_<%=index%>" name="question_id" value="<%=question.id%>">
+            <input type="hidden" id="candidate_answer_<%=index%>" name="question_id" value="<%=question.candidate%>">
+            <input type="hidden" id="party_answer_<%=index%>" name="question_id" value="<%=question.party%>">
+          </form>
           </div>
         <% end %>
-
       <%end%>
 
-    <div id="div-buttons">
-      <button id="agree-button" class="btn btn-primary ">&#x2713;</button>
-      <div id="padding-btw-AD"></div>
-      <button id="disagree-button" class="btn btn-primary ">X</button>
-    </div>
+      <%= javascript_tag do %>
+        length = '<%= @quiz.questions.length %>';
+      <% end %>
+
+
+
+      <div id="div-buttons">
+        <button id="agree-button" class="btn btn-primary ">&#x2713;</button>
+        <div id="padding-btw-AD"></div>
+        <button id="disagree-button" class="btn btn-primary ">X</button>
+      </div>
+
 
 
     <!-- PROGRESS BAR IN THE QUIZ -->

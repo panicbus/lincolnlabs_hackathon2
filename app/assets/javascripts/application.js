@@ -25,7 +25,6 @@ $(document).ready(function(){
   var x=0;
 
   $('#agree-button').click(function(){
-    alert("hi");
     // event.preventDefault();
     var parent = $(this).parent().siblings();
 
@@ -33,25 +32,28 @@ $(document).ready(function(){
     $(parent[div+1]).removeClass('hidden');
     div += 1;
 
-
-
-
     var $candidate_answer = $('#candidate_answer_'+x).val();
     var $party_answer = $('#party_answer_'+x).val();
     var $question_id = $ ('#question_id_'+x).val();
 
     x+=1;
-      var answer = {
-        answer:
-        {
-          question_id: $question_id,
-          candidate_answer: $candidate_answer,
-          party_answer:$party_answer
-        }
-      };
+    var answer = {
+      answer:
+      {
+        question_id: $question_id,
+        candidate_answer: $candidate_answer,
+        party_answer:$party_answer
+      }
+    };
+
+    if(x == Number(length)){
+      document.location.href = "/quizes";
+    } else {
+
       $.post("/question_tests/"+$question_id, answer).done(function(data) {
-        //
+      //
       });
+    }
 
 
   });
@@ -63,20 +65,20 @@ $(document).ready(function(){
     $(parent[div]).addClass('hidden');
     $(parent[div+1]).removeClass('hidden');
     div+=1;
+     x+=1;
+    if(x == Number(length)){
+      document.location.href = "/quizes"; //need to be changed to next quiz
+    }
+
   });
 
-});
 
-}
-
-	// pie results javascript
-	
   var w = 300,                        //width
     h = 300,                            //height
     r = 100,                            //radius
     color = d3.scale.category20c();     //builtin range of colors
     //var demVal = Math.floor((Math.random() * 100) + 1);
-    data = [{"label":"DEM", "value":75}, 
+    data = [{"label":"DEM", "value":75},
             {"label":"REP", "value":25}];
 
  var vis = d3.select("#graph")
@@ -87,9 +89,15 @@ $(document).ready(function(){
         .append("svg:g")
             .attr("id", "grp")                //make a group to hold our pie chart
             .attr("transform", "translate(" + r + "," + r + ")");    //move the center of the pie chart from 0, 0 to radius, radius
- 
+
     var arc = d3.svg.arc()              //this will create <path> elements for us using arc data
         .outerRadius(r);
- 
+
+
+
+
+
+
+});
 
 
